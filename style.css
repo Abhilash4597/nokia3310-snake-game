@@ -3,3 +3,30 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ground {
+  height: 100vmin;
+  width: 100vmin;
+  background-color: rgb(98, 14, 119);
+  display: grid;
+  grid-template-columns: repeat(22, 1fr);
+  grid-template-rows: repeat(22, 1fr);
+}
+
+.bodyColor {
+  background-color: rgb(20, 231, 178);
+}
+
+.headColor {
+  background-color: rgb(13, 133, 103);
+}
+
+.foodColor{
+  background-color: rgb(110, 204, 180);
+}
