@@ -31,7 +31,12 @@ function collided(snake) {
     }
   }
   //# colidding wall
-  if (snake[0].x >= 22 || snake[0].x <= 0 || snake[0].y >= 22 || snake[0].y <= 0) {
+  if (
+    snake[0].x >= 22 ||
+    snake[0].x <= 0 ||
+    snake[0].y >= 22 ||
+    snake[0].y <= 0
+  ) {
     return true;
   }
 }
