@@ -23,14 +23,23 @@ function main(currentTime) {
   gameEngine();
 }
 
+function collided(snake) {
+  //# colliding itself
+  for (let i = 1; i < snakeArr.length; i++) {
+    if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+      return true;
+    }
+  }
+  //# colidding wall
+  if (snake[0].x >= 22 || snake[0].x <= 0 || snake[0].y >= 22 || snake[0].y <= 0) {
+    return true;
+  }
+}
+
 function gameEngine() {
   // # updating the snake array and food
 
-  function collided(snArr) {
-    return false;
-  }
-
-  if (collided(snakeArr)){
+  if (collided(snakeArr)) {
     gameOverSound.play();
     gameSound1.pause();
     mainDirection = { x: 0, y: 0 };
@@ -40,7 +49,7 @@ function gameEngine() {
     score = 0;
   }
 
-  // increamenting food and regenerate the food
+  //# increamenting food and regenerate the food
   if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
     eatingSound.play();
     snakeArr.unshift({
@@ -55,8 +64,8 @@ function gameEngine() {
     };
   }
 
-  // snake moving logic
-  for (let i = snakeArr.length-2; i >= 0; i--) {
+  //# snake moving logic
+  for (let i = snakeArr.length - 2; i >= 0; i--) {
     snakeArr[i + 1] = { ...snakeArr[i] };
   }
 
@@ -71,7 +80,7 @@ function gameEngine() {
     snakeBody = document.createElement('div');
     snakeBody.style.gridRowStart = ele.y;
     snakeBody.style.gridColumnStart = ele.x;
-    
+
     if (index === 0) {
       snakeBody.classList.add('headColor');
     } else {
@@ -93,36 +102,35 @@ function gameEngine() {
 
 window.requestAnimationFrame(main);
 
-window.addEventListener("keydown", e => {
-  mainDirection = { x: 0, y: 1 };  //start the game
+window.addEventListener('keydown', e => {
+  mainDirection = { x: 0, y: 1 }; //start the game
   gameSound1.play();
   switch (e.key) {
-    case "ArrowUp":
+    case 'ArrowUp':
       console.log('arrowUp');
-      mainDirection.x =0;
-      mainDirection.y =-1;
+      mainDirection.x = 0;
+      mainDirection.y = -1;
       break;
-    
-    case "ArrowDown":
+
+    case 'ArrowDown':
       console.log('arrowDown');
-      mainDirection.x =0;
-      mainDirection.y =1;
+      mainDirection.x = 0;
+      mainDirection.y = 1;
       break;
-    
-    case "ArrowLeft":
+
+    case 'ArrowLeft':
       console.log('arrowLeft');
-      mainDirection.x =-1;
-      mainDirection.y =0;
+      mainDirection.x = -1;
+      mainDirection.y = 0;
       break;
-    
-    case "ArrowRight":
+
+    case 'ArrowRight':
       console.log('arrowRight');
-      mainDirection.x =1;
-      mainDirection.y =0;
+      mainDirection.x = 1;
+      mainDirection.y = 0;
       break;
-    
+
     default:
       break;
-    
   }
-})
+});

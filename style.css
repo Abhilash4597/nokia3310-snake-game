@@ -13,24 +13,30 @@ body {
 .ground {
   height: 100vmin;
   width: 100vmin;
-  background-color: rgb(98, 14, 119);
+  background: linear-gradient(
+    rgb(98, 14, 119),
+    rgb(132, 30, 158),
+    rgb(163, 66, 187),
+    rgb(198, 121, 218)
+  );
   display: grid;
   grid-template-columns: repeat(22, 1fr);
   grid-template-rows: repeat(22, 1fr);
 }
 
 .bodyColor {
-  background-color: rgb(20, 231, 178);
+  background: linear-gradient(rgb(24, 184, 144), rgb(148, 248, 223));
   border-radius: 50px;
   /* background; */
 }
 
 .headColor {
-  background-color: rgb(13, 133, 103);
+  background: linear-gradient(rgb(6, 73, 55), rgb(32, 238, 187));
   border-radius: 50px;
+  transform: scale(1.1);
 }
 
-.foodColor{
-  background-color: rgb(110, 204, 180);
+.foodColor {
+  background: linear-gradient(rgb(89, 163, 145), rgb(19, 122, 97));
   border-radius: 50px;
 }
