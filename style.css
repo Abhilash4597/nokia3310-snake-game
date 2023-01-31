@@ -5,40 +5,52 @@
 }
 
 body {
+  background: url(https://st.depositphotos.com/3254189/4461/v/600/depositphotos_44619067-stock-illustration-leather-animal-snake-textures.jpg);
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+}
+
+.main_ground {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .ground {
   height: 100vmin;
   width: 100vmin;
   background: linear-gradient(
-    rgb(98, 14, 119),
-    rgb(132, 30, 158),
-    rgb(163, 66, 187),
-    rgb(198, 121, 218)
+    rgba(174, 26, 211, 0.904),
+    rgb(191, 43, 228, 0.904),
+    rgb(207, 85, 238, 0.904),
+    rgb(214, 133, 235, 0.904),
   );
   display: grid;
   grid-template-columns: repeat(22, 1fr);
   grid-template-rows: repeat(22, 1fr);
+  box-shadow: 0px 0px 1000px black;
 }
 
 .bodyColor {
-  background: linear-gradient(rgb(24, 184, 144), rgb(148, 248, 223));
+  background: linear-gradient(yellow, rgb(148, 248, 223));
   border-radius: 20px;
   box-shadow: 1px 0px 5px rgb(19, 122, 97);
   /* background; */
 }
 
 .headColor {
-  background: linear-gradient(rgb(6, 73, 55), rgb(32, 238, 187));
+  background: linear-gradient(yellow, rgb(32, 238, 187));
   border-radius: 12px;
   transform: scale(1.1);
   box-shadow: 1px 0px 5px rgb(19, 122, 97);
 }
 
 .foodColor {
-  background: linear-gradient(rgb(89, 163, 145), rgb(19, 122, 97));
+  background: linear-gradient(yellow, rgb(19, 122, 97));
   border-radius: 8px;
+}
+
+.scores {
+  color: rgb(252, 238, 251);
 }

@@ -1,10 +1,10 @@
 // #-------------------CONSTANTS AND VARIABLES----------------------
 
 let mainDirection = { x: 0, y: 0 };
-const eatingSound = new Audio('../sounds/eating.mp3');
-const gameOverSound = new Audio('../sounds/gameOver.mp3');
-const gameSound = new Audio('../sounds/snake.mp3');
-const gameSound1 = new Audio('../sounds/snake Music.mp3');
+const eatingSound = new Audio('./sounds/eating.mp3');
+const gameOverSound = new Audio('./sounds/gameOver.mp3');
+const gameSound = new Audio('./sounds/snake.mp3');
+const gameSound1 = new Audio('./sounds/snake Music.mp3');
 let lastTime = 0;
 let speed = 10;
 let snakeArr = [{ x: 11, y: 15 }];
@@ -51,7 +51,7 @@ function gameEngine() {
     mainDirection = { x: 0, y: 0 };
     alert('Game Over');
     snakeArr = [{ x: 11, y: 15 }];
-    gameSound1.play();
+    // gameSound1.play();
     score = 0;
   }
 
@@ -79,7 +79,6 @@ function gameEngine() {
   snakeArr[0].y += mainDirection.y;
 
   // #display the snake
-
   ground.innerHTML = '';
   snakeArr.forEach((ele, index) => {
     snakeBody = document.createElement('div');
