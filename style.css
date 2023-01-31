@@ -24,7 +24,7 @@ body {
     rgba(174, 26, 211, 0.904),
     rgb(191, 43, 228, 0.904),
     rgb(207, 85, 238, 0.904),
-    rgb(214, 133, 235, 0.904),
+    rgb(214, 133, 235, 0.904)
   );
   display: grid;
   grid-template-columns: repeat(22, 1fr);
