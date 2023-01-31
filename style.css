@@ -26,17 +26,19 @@ body {
 
 .bodyColor {
   background: linear-gradient(rgb(24, 184, 144), rgb(148, 248, 223));
-  border-radius: 50px;
+  border-radius: 20px;
+  box-shadow: 1px 0px 5px rgb(19, 122, 97);
   /* background; */
 }
 
 .headColor {
   background: linear-gradient(rgb(6, 73, 55), rgb(32, 238, 187));
-  border-radius: 50px;
+  border-radius: 12px;
   transform: scale(1.1);
+  box-shadow: 1px 0px 5px rgb(19, 122, 97);
 }
 
 .foodColor {
   background: linear-gradient(rgb(89, 163, 145), rgb(19, 122, 97));
-  border-radius: 50px;
+  border-radius: 8px;
 }

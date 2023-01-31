@@ -30,6 +30,7 @@ function collided(snake) {
       return true;
     }
   }
+
   //# colidding wall
   if (
     snake[0].x >= 22 ||
@@ -81,7 +82,6 @@ function gameEngine() {
 
   ground.innerHTML = '';
   snakeArr.forEach((ele, index) => {
-    // console.log(ele, index);
     snakeBody = document.createElement('div');
     snakeBody.style.gridRowStart = ele.y;
     snakeBody.style.gridColumnStart = ele.x;
