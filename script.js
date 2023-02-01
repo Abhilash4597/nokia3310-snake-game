@@ -10,6 +10,7 @@ let speed = 10;
 let snakeArr = [{ x: 11, y: 15 }];
 let food = { x: 10, y: 10 };
 let score = 0;
+// let highScoreValue = 0;
 const ground = document.querySelector('.ground');
 const scoreDisplay = document.getElementById('score');
 const highScoreDisplay = document.getElementById('highScore');
@@ -29,6 +30,7 @@ function collided(snake) {
   //# colliding itself
   for (let i = 1; i < snakeArr.length; i++) {
     if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) {
+      scoreDisplay.innerHTML = 'SCORE : ' + 0;
       return true;
     }
   }
@@ -40,6 +42,7 @@ function collided(snake) {
     snake[0].y >= 22 ||
     snake[0].y <= 0
   ) {
+    scoreDisplay.innerHTML = 'SCORE : ' + 0;
     return true;
   }
 }
@@ -53,7 +56,7 @@ function gameEngine() {
     mainDirection = { x: 0, y: 0 };
     alert('Game Over');
     snakeArr = [{ x: 11, y: 15 }];
-    // gameSound1.play();
+    gameSound1.play();
     score = 0;
   }
 
@@ -61,6 +64,11 @@ function gameEngine() {
   if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
     eatingSound.play();
     score += 1;
+    if (score > highScoreValue) {
+      highScoreValue = score;
+      localStorage.setItem('highScore', JSON.stringify(highScoreValue));
+      highScoreDisplay.innerHTML = 'HIGH SCORE :' + highScoreValue; 
+    }
     scoreDisplay.innerHTML = 'SCORE : ' + score;
     snakeArr.unshift({
       x: snakeArr[0].x + mainDirection.x,
@@ -108,8 +116,16 @@ function gameEngine() {
 
 // #-------------------MAIN LOGIC---------------------
 
-window.requestAnimationFrame(main);
+highScore = localStorage.getItem('highScore');
+if (highScore === null) {
+  highScoreValue = 0;
+  localStorage.setItem('highScore',JSON.stringify(highScoreValue));
+} else {
+  highScoreValue = JSON.parse(highScore);
+  highScoreDisplay.innerHTML = 'HIGH SCORE :' + highScore;
+}
 
+window.requestAnimationFrame(main);
 window.addEventListener('keydown', e => {
   mainDirection = { x: 0, y: 1 }; //start the game
   gameSound1.play();
