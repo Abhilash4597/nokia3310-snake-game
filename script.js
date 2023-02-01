@@ -11,6 +11,8 @@ let snakeArr = [{ x: 11, y: 15 }];
 let food = { x: 10, y: 10 };
 let score = 0;
 const ground = document.querySelector('.ground');
+const scoreDisplay = document.getElementById('score');
+const highScoreDisplay = document.getElementById('highScore');
 
 // #-------------------FUNCTIONS----------------------
 
@@ -58,6 +60,8 @@ function gameEngine() {
   //# increamenting food and regenerate the food
   if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
     eatingSound.play();
+    score += 1;
+    scoreDisplay.innerHTML = 'SCORE : ' + score;
     snakeArr.unshift({
       x: snakeArr[0].x + mainDirection.x,
       y: snakeArr[0].y + mainDirection.y,

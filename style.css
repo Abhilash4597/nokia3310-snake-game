@@ -74,7 +74,7 @@ background: linear-gradient(
   );
   box-shadow: 0px 0px 10px black;
   /* margin-bottom: 50px; */
-  border: 10px outset rgba(245, 196, 61, 0.795);;
+  border: 10px outset rgba(253, 212, 100, 0.795);;
 }
 
 .high_score {
@@ -85,6 +85,6 @@ background: linear-gradient(
     rgb(214, 133, 235, 0.904)
   );
   box-shadow: 0px 0px 10px black;
-  border: 10px outset rgba(245, 196, 61, 0.795);
+  border: 10px outset rgba(253, 212, 100, 0.795);
   /* margin-top: 40px; */
 }
