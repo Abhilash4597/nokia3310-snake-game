@@ -7,7 +7,7 @@ const gameSound = new Audio('./sounds/snake.mp3');
 const gameSound1 = new Audio('./sounds/snake Music.mp3');
 const gameSound2 = new Audio('./sounds/main music.mp3');
 let lastTime = 0;
-let speed = 5;
+let speed = 2;
 let snakeArr = [{ x: 11, y: 15 }];
 let food = { x: 10, y: 10 };
 let score = 0;
@@ -21,7 +21,7 @@ function main(currentTime) {
   window.requestAnimationFrame(main);
   if ((currentTime - lastTime) / 1000 < 1 / speed) {
     return;
-  }
+  };
   lastTime = currentTime;
   gameEngine();
 }
@@ -60,6 +60,7 @@ function gameEngine() {
   }
 
   //# increamenting food and regenerate the food
+
   if (snakeArr[0].y === food.y && snakeArr[0].x === food.x) {
     eatingSound.play();
     score += 1;
